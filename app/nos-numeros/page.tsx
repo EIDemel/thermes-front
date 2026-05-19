@@ -4,7 +4,7 @@ import Footer from "../components/layout/Footer";
 
 async function getNumeros() {
   const res = await fetch(
-    "https://www.leodemeilliers.fr/thermes/wp-json/wp/v2/posts?categories=6&_embed",
+    "http://www.segi8047.odns.fr/thermes/wp-json/wp/v2/posts?categories=6&_embed",
     { cache: "no-store" }
   );
   return res.json();
@@ -27,8 +27,8 @@ export default async function NosNumeros() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5))" }} />
 
         <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-          <h1 style={{ color: "white", fontSize: "clamp(2rem, 5vw, 4rem)", fontWeight: 700, textAlign: "center", margin: 0 }}>
-            Nos numéros
+          <h1 style={{ margin: 20, backgroundColor: "#E8006E", color: "#FF6EB4", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, textAlign: "center", padding: "0.5rem 1rem" }}>
+            NOS NUMÉROS
           </h1>
         </div>
 
@@ -43,7 +43,7 @@ export default async function NosNumeros() {
       <main style={{ padding: "4rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
+          gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
           gap: "0.5rem",
         }}>
           {numeros.map((post: any) => {

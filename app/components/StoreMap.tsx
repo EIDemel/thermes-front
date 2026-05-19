@@ -212,14 +212,14 @@ export default function StoreMap() {
         </div>
 
         {/* Map + List */}
-        <div style={{
+        <div className="store-grid" style={{
           display: "grid",
           gridTemplateColumns: "minmax(0,1fr) 320px",
           gap: "1.5rem",
           alignItems: "start",
         }}>
           {/* Map */}
-          <div style={{
+          <div className="store-map" style={{
             position: "sticky" as const,
             top: "1.5rem",
             border: "1px solid #dddad2",
@@ -230,7 +230,7 @@ export default function StoreMap() {
           </div>
 
           {/* Store list */}
-          <div style={{
+          <div className="store-list" style={{
             display: "flex",
             flexDirection: "column" as const,
             gap: "0.6rem",
@@ -310,6 +310,19 @@ export default function StoreMap() {
         div::-webkit-scrollbar-track { background: transparent; }
         div::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
         div::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+        @media (max-width: 768px) {
+          .store-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .store-list {
+            max-height: none !important;
+            overflow-y: visible !important;
+          }
+          .store-map {
+            position: static !important;
+          }
+        }
       `}</style>
     </section>
   );

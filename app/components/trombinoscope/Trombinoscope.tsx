@@ -10,30 +10,31 @@ type Member = {
 };
 
 const members: Member[] = [
-  {
-    name: "Diane Perroux",
-    role: "",
-    image: "/images/trombinoscope/DIANE.jpeg",
-    bio: "Moi c’est Diane, 21 ans, je suis co-rédactrice en cheffe de Thermes. J'aime le montage et le bricolage, écrire sur le cinéma et quelquefois pour des films, je m’éparpille le jour puis je dors beaucoup la nuit. Plus tard je ferai des expérimentations en résine, je reprendrai la danse, je me couperai les cheveux courts et j’apprendrai la guitare, mais pour le moment je travaille sur mon film de master en écoutant PJ Harvey, et ça me ravit.",
-  },
+  
   {
     name: "Nina Gayet",
     role: "",
-    image: "/images/trombinoscope/NINA.jpeg",
-    bio: "Yo moi c’est Nina, j’ai 22 ans, toutes mes dents mais plus de sourcils depuis septembre (j’en ai fait un trait de personnalité). Je suis au comité de rédaction et éditrice en cheffe de Thermes! à côté je travaille sur Youssef Chahine en master d’histoire du ciné, je suis surveillante, je bosse chez Paradoxe (qui produit Thermes) et j’écris un peu de tout. quand je suis pas au café ou au ciné je fais des playlists (c’est chronophage mais merveilleux) et j’adore ça.",
+    image: "/images/trombinoscope/PPNINA.png",
+    bio: "Yo moi c'est Nina, j'ai 22 ans, toutes mes dents mais plus de sourcils depuis septembre (j'en ai fait un trait de personnalité). Je suis au comité de rédaction et éditrice en cheffe de Thermes! à côté je travaille sur Youssef Chahine en master d'histoire du ciné, je suis surveillante, je bosse chez Paradoxe (qui produit Thermes) et j'écris un peu de tout. quand je suis pas au café ou au ciné je fais des playlists (c'est chronophage mais merveilleux) et j'adore ça.",
   },
   {
     name: "Sacha Festy",
     role: "",
-    image: "/images/trombinoscope/SACHA.jpeg",
-    bio: "Je suis étudiant en littérature comparée, maraîcher le jour, fan absolu de Die Hard et de Stévenin la nuit, amateur de poésies, documentaires, et de tout type d’expérimentations intermédiales le jour. Un gros curieux finalement.",
+    image: "/images/trombinoscope/PPSACHA.png",
+    bio: "Je suis étudiant en littérature comparée, maraîcher le jour, fan absolu de Die Hard et de Stévenin la nuit, amateur de poésies, documentaires, et de tout type d'expérimentations intermédiales le jour. Un gros curieux finalement.",
   },
-//   {
-//     name: "SIMON",
-//     role: "Rédacteur en chef adjoint",
-//     image: "/images/trombinoscope/SIMON.jpg",
-//     bio: "Simon épargne les fautes, déniche les contradictions et garde le cap éditorial quand tout part dans tous les sens.",
-//   },
+  {
+    name: "Diane Perroux",
+    role: "",
+    image: "/images/trombinoscope/PPDIANE.png",
+    bio: "Moi c'est Diane, 21 ans, je suis co-rédactrice en cheffe de Thermes. J'aime le montage et le bricolage, écrire sur le cinéma et quelquefois pour des films, je m'éparpille le jour puis je dors beaucoup la nuit. Plus tard je ferai des expérimentations en résine, je reprendrai la danse, je me couperai les cheveux courts et j'apprendrai la guitare, mais pour le moment je travaille sur mon film de master en écoutant PJ Harvey, et ça me ravit.",
+  },
+  {
+    name: "Oscar Griveau",
+    role: "",
+    image: "/images/trombinoscope/PPOSCAR.png",
+    bio: "Hello, moi c'est Oscar, j'ai 22 ans, je fais du théâtre, de la scéno surtout, et j'aime beaucoup ça ! Parce que c'est bien dur de se résumer en quelques lignes voici pèle mêles des trucs que j'aime : le vert, les jeux de société, les salopettes, cuisiner, le drag et m'endormir au soleil.",
+  },
 //   {
 //     name: "OSCAR",
 //     role: "Graphiste",
@@ -42,14 +43,15 @@ const members: Member[] = [
 //   },
 ];
 
-const CARD_SIZE = 300; // width & default height (square)
+const BG_COLORS = ["#E8006E", "#485F63", "#F26522"];
 
-function MemberCard({ member }: { member: Member }) {
+const CARD_SIZE = 300;
+
+function MemberCard({ member, index }: { member: Member; index: number }) {
   const [isActive, setIsActive] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const [panelHeight, setPanelHeight] = useState(0);
 
-  // Measure the panel's natural height once mounted
   useEffect(() => {
     if (panelRef.current) {
       setPanelHeight(panelRef.current.scrollHeight);
@@ -57,6 +59,7 @@ function MemberCard({ member }: { member: Member }) {
   }, []);
 
   const totalHeight = isActive ? CARD_SIZE + panelHeight : CARD_SIZE;
+  const bgColor = BG_COLORS[index % 3];
 
   return (
     <div
@@ -70,13 +73,10 @@ function MemberCard({ member }: { member: Member }) {
         cursor: "pointer",
         flexShrink: 0,
         transition: "height 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease",
-        boxShadow: isActive
-          ? "0 10px 32px rgba(0,0,0,0.22)"
-          : "none",
-        // no border-radius by default — stays square
+        boxShadow: isActive ? "0 10px 32px rgba(0,0,0,0.22)" : "none",
       }}
     >
-      {/* ── Photo — always top CARD_SIZE px ── */}
+      {/* Photo */}
       <div
         style={{
           position: "absolute",
@@ -84,6 +84,7 @@ function MemberCard({ member }: { member: Member }) {
           left: 0,
           width: `${CARD_SIZE}px`,
           height: `${CARD_SIZE}px`,
+          background: bgColor,
         }}
       >
         <img
@@ -109,7 +110,7 @@ function MemberCard({ member }: { member: Member }) {
         />
       </div>
 
-      {/* ── Info panel — natural height, revealed below ── */}
+      {/* Info panel */}
       <div
         ref={panelRef}
         style={{
@@ -117,7 +118,7 @@ function MemberCard({ member }: { member: Member }) {
           top: `${CARD_SIZE}px`,
           left: 0,
           width: `${CARD_SIZE}px`,
-          background: "#485F63",
+          background: bgColor,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -126,7 +127,6 @@ function MemberCard({ member }: { member: Member }) {
           gap: "0.4rem",
           opacity: isActive ? 1 : 0,
           transition: "opacity 0.2s ease " + (isActive ? "0.2s" : "0s"),
-          // let the content define the height naturally
         }}
       >
         <span
@@ -205,8 +205,12 @@ export default function Trombinoscope() {
             alignItems: "flex-start",
           }}
         >
-          {row.map((member) => (
-            <MemberCard key={member.name} member={member} />
+          {row.map((member, colIdx) => (
+            <MemberCard
+              key={member.name}
+              member={member}
+              index={rowIdx * 3 + colIdx}
+            />
           ))}
         </div>
       ))}

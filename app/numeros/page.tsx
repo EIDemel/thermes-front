@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 async function getNumero(slug: string) {
   const res = await fetch(
-    `https://www.leodemeilliers.fr/thermes/wp-json/wp/v2/posts?slug=${slug}&categories=6&_embed`,
+    `http://www.segi8047.odns.fr/thermes/wp-json/wp/v2/posts?slug=${slug}&categories=6&_embed`,
     { cache: "no-store" }
   );
 
@@ -23,7 +23,6 @@ export default async function NumeroPage({
   const post = await getNumero(params.slug);
 
   const image = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
-  const author = post._embedded?.["author"]?.[0];
   const date = new Date(post.date).toLocaleDateString("fr-FR", {
     day: "numeric",
     month: "long",
@@ -68,7 +67,6 @@ export default async function NumeroPage({
             />
             <p style={{ color: "rgba(255,255,255,0.8)", marginTop: "0.75rem", fontSize: "0.95rem" }}>
               {date}
-              {author && ` — ${author.name}`}
             </p>
           </div>
         </div>
@@ -85,7 +83,6 @@ export default async function NumeroPage({
             />
             <p style={{ color: "#888", marginBottom: "3rem", fontSize: "0.95rem" }}>
               {date}
-              {author && ` — ${author.name}`}
             </p>
           </>
         )}

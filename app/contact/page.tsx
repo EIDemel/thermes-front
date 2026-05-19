@@ -15,8 +15,8 @@ export default function Contact() {
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5))" }} />
 
         <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-          <h1 style={{ color: "white", fontSize: "clamp(2rem, 5vw, 4rem)", fontWeight: 700, textAlign: "center", margin: 0 }}>
-            Nous contacter
+          <h1 style={{ margin: 20, backgroundColor: "#F26522", color: "#FFB499", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, textAlign: "center", padding: "0.5rem 1rem" }}>
+            NOUS CONTACTER
           </h1>
         </div>
 
@@ -145,6 +145,31 @@ export default function Contact() {
                 <path d="M2 7l10 7 10-7"/>
               </svg>
               <span style={{ fontWeight: 500 }}>revuethermes@gmail.com</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/thermes-revue/"
+              className="contact-btn-dark"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.9rem",
+                textDecoration: "none",
+                color: "#fff",
+                background: "#485F63",
+                border: "1px solid #485F63",
+                borderRadius: "2px",
+                padding: "1rem 1.4rem",
+                fontSize: "0.9rem",
+                transition: "background 0.18s",
+              }}
+            >
+
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z"/>
+              </svg>
+
+              <span style={{ fontWeight: 500 }}>LinkedIn</span>
             </a>
 
           </div>

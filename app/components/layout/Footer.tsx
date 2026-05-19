@@ -1,5 +1,6 @@
 "use client";
 
+import { link } from "fs";
 import { useRef } from "react";
 
 export default function Footer() {
@@ -96,8 +97,10 @@ export default function Footer() {
 
         {/* Liens bas */}
         <div style={{ display: "flex", justifyContent: "center", gap: "2rem", fontSize: "0.75rem", letterSpacing: "0.1em", opacity: 0.6 }}>
-          {["OÙ NOUS TROUVER ?", "MENTIONS LÉGALES", "CONTACT"].map(link => (
-            <a key={link} href="#" style={{ color: "white", textDecoration: "none" }}>{link}</a>
+          {[
+            {label: "OÙ NOUS TROUVER ?", link: "/nos-points-de-vente"}, {label: "MENTIONS LÉGALES", link: "/mentions-legales"}, {label: "CONTACT", link: "/contact"}
+          ].map(link => (
+            <a key={link.label} href={link.link} style={{ color: "white", textDecoration: "none" }}>{link.label}</a>
           ))}
         </div>
       </div>

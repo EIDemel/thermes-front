@@ -5,7 +5,7 @@ import Footer from "@/app/components/layout/Footer";
 
 async function getNumero(slug: string) {
   const res = await fetch(
-    `http://www.segi8047.odns.fr/thermes/wp-json/wp/v2/posts?slug=${slug}&categories=6&_embed`,
+    `http://www.segi8047.odns.fr/thermes/wp-json/wp/v2/posts?slug=${slug}&categories=5&_embed`,
     { cache: "no-store" }
   );
 
@@ -34,6 +34,11 @@ export default async function NumeroPage({
   const post = await getNumero(slug);
 
   const image = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+  const date = new Date(post.date).toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
   return (
     <>
@@ -70,6 +75,9 @@ export default async function NumeroPage({
                 margin: 0,
               }}
             />
+            <p style={{ color: "rgba(255,255,255,0.8)", marginTop: "0.75rem", fontSize: "0.95rem" }}>
+              {date}
+            </p>
           </div>
         </div>
       )}
@@ -81,6 +89,9 @@ export default async function NumeroPage({
               dangerouslySetInnerHTML={{ __html: post.title.rendered }}
               style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 700, marginBottom: "1rem" }}
             />
+            <p style={{ color: "#888", marginBottom: "3rem", fontSize: "0.95rem" }}>
+              {date}
+            </p>
           </>
         )}
 
@@ -89,7 +100,30 @@ export default async function NumeroPage({
           style={{ lineHeight: 1.8, fontSize: "1.05rem", color: "#222" }}
         />
 
-        <PdfViewer url={extractPdfUrl(post.content.rendered) || ""} />
+        {extractPdfUrl(post.content.rendered) && (
+          <a
+            href={extractPdfUrl(post.content.rendered)!}
+            download
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.6rem",
+              marginTop: "2.5rem",
+              background: "#485F63",
+              color: "#fff",
+              padding: "0.75rem 1.8rem",
+              fontWeight: 600,
+              fontSize: "0.9rem",
+              textDecoration: "none",
+              letterSpacing: "0.04em",
+            }}
+          >
+            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path d="M12 3v13M6 11l6 6 6-6M3 21h18" />
+            </svg>
+            Télécharger le PDF
+          </a>
+        )}
 
       </main>
 

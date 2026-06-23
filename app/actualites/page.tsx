@@ -4,7 +4,7 @@ import Footer from "../components/layout/Footer";
 
 async function getActualites() {
   const res = await fetch(
-    "https://cms.revuethermes.fr/thermes/wp-json/wp/v2/posts?categories=5&_embed",
+    "https://cms.revuethermes.fr/wp-json/wp/v2/posts?categories=5&_embed",
     { cache: "no-store" }
   );
   return res.json();

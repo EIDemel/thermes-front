@@ -2,7 +2,7 @@ import HeroPage from "./components/sections/HeroPage";
 
 async function getPosts() {
   const res = await fetch(
-    "http://www.segi8047.odns.fr/thermes/wp-json/wp/v2/posts?_embed",
+    "https://cms.revuethermes.fr/thermes/wp-json/wp/v2/posts?_embed",
     { cache: "no-store" }
   );
   return res.json();

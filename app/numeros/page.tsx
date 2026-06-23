@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 async function getNumero(slug: string) {
   const res = await fetch(
-    `http://www.segi8047.odns.fr/thermes/wp-json/wp/v2/posts?slug=${slug}&categories=6&_embed`,
+    `https://cms.revuethermes.fr/thermes/wp-json/wp/v2/posts?slug=${slug}&categories=6&_embed`,
     { cache: "no-store" }
   );
 

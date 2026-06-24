@@ -36,14 +36,15 @@ export default function HeroPage({ posts }: { posts: any[] }) {
           <div style={{ alignSelf: "center", background: "#E8006E", padding: "0.6rem 1.2rem", maxWidth: "60%" }}>
             <p style={{ margin: 0, color: "#FFB8DA", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
               Lac noir, barque noire, deux silhouettes de papier découpé, noires.<br />
-              Jusqu'où s'étendent les arbres noirs qui s'abreuvent ici ?
+              Jusqu'où s'étendent les arbres noirs qui s'abreuvent ici ? <sup>1</sup>
+              
             </p>
           </div>
 
           <div style={{ alignSelf: "center", background: "#F26522", padding: "0.6rem 1.2rem", maxWidth: "55%" }}>
             <p style={{ margin: 0, color: "#FFB499", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
               Black lake, black boat, two black, cut-paper people.<br />
-              Where do the black trees go that drink here ?
+              Where do the black trees go that drink here ? <sup>2</sup>
             </p>
           </div>
         </div>
@@ -66,6 +67,15 @@ export default function HeroPage({ posts }: { posts: any[] }) {
 
       {/* CARROUSEL */}
       <main style={{ maxWidth: "100%", overflow: "hidden" }}>
+        <div style={{ padding: "10px clamp(1rem, 10vw, 250px)", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", display: "flex", height: "auto", width: "100%", justifyContent: "center", alignItems: "center", backgroundColor: "#E8006E", color: "#FFB8DA", textAlign: "center" }}>
+          Thermes est une revue de cinéma pensée par toutes et tous, pour toutes et tous. Imaginé à partir d’un vers de poésie, chaque numéro juxtapose les arts et les visions, encourage la création autour des films. Nous sommes perpétuellement à la recherche de nouveaux.elles contributeur.ices, pour proposer toutes formes de création autour du cinéma.<br />
+        </div>
+        <div style={{ padding:"10px 10px 0px 10px", margin: 0, fontSize: "clamp(0.6rem, 1vw, 0.95rem)", display: "flex", height: "auto", width: "100%", justifyContent: "left", alignItems: "left", backgroundColor: "#F26522", color: "#FFB499", textAlign: "left" }}>
+          <sup>1</sup> Crossing Waters, Sylvia Plath, édition Faber and Faber Limited, 1971.  <br />
+        </div>
+        <div style={{ padding:"0px 10px 10px 10px", margin: 0, fontSize: "clamp(0.6rem, 1vw, 0.95rem)", display: "flex", height: "auto", width: "100%", justifyContent: "left", alignItems: "left", backgroundColor: "#F26522", color: "#FFB499", textAlign: "left" }}>
+          <sup>2</sup> Arbres d'Hiver précédé de La Traversée, Sylvia Plath, traduction par Françoise Morvan et Valérie Rousseau édition Gallimard, 1999.   
+        </div>
         <div style={{ display: "flex", height: "500px", width: "100%" }}>
           {posts.slice(0, 5).map((post: any, index: number) => {
             const image = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;

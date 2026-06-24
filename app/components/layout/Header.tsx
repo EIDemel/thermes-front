@@ -45,7 +45,9 @@ export default function Header() {
           border-bottom: 1px solid rgba(0,0,0,0.08);
           box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-
+        .nav-link:hover {
+          background: #E8006E;
+        }
         .nav-links {
           display: flex;
           gap: 0.5rem;

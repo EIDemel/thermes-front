@@ -47,9 +47,8 @@ export default async function NosNumeros() {
           <h3><img src="/images/logo-thermes-noir.png" alt="Logo Thermes" style={{ width: "75px", marginBottom: "1rem", verticalAlign: "middle" }} /> </h3>
 
           <p style={{ fontSize: "1.25rem", lineHeight: 1.6, color: "#333" }}>
-            <b>THERMES</b> est une revue pensée par toutes et tous, pour toutes et tous. <br />
-            Nous sommes perpétuellement à la recherche de nouveaux.elles contributeur.ices pour la revue. 
-            Articles, dessins, photographies… Toutes les créations et propositions sont les bienvenues
+            <b>THERMES</b> est une revue de cinéma pensée par toutes et tous, pour toutes et tous. <br />
+            Imaginé à partir d’un vers de poésie, chaque numéro juxtapose les arts et les visions, encourage la création autour des films. Nous sommes perpétuellement à la recherche de nouveaux.elles contributeur.ices, pour proposer toutes formes de création autour du cinéma.
           </p>
         </div>
 

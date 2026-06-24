@@ -124,7 +124,7 @@ function MemberCard({
         <span
           style={{
             fontWeight: 700,
-            fontSize: "1rem",
+            fontSize: isMobile ? "1.25rem" : "1rem",
             letterSpacing: "0.1em",
             color: "#fff",
             textAlign: "center",
@@ -146,7 +146,7 @@ function MemberCard({
         {member.role && (
           <span
             style={{
-              fontSize: "0.75rem",
+              fontSize: isMobile ? "0.95rem" : "0.75rem",
               color: "rgba(255,255,255,0.65)",
               textAlign: "center",
               letterSpacing: "0.04em",
@@ -160,10 +160,10 @@ function MemberCard({
  
         <p
           style={{
-            fontSize: "0.75rem",
+            fontSize: isMobile ? "1rem" : "0.75rem",
             color: "rgba(255,255,255,0.88)",
             textAlign: "center",
-            lineHeight: 1.55,
+            lineHeight: 1.6,
             margin: 0,
           }}
         >

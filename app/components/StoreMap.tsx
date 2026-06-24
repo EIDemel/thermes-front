@@ -146,7 +146,7 @@ export default function StoreMap() {
             color: "#485F63",
             lineHeight: 1.15,
           }}>
-            Nos points de vente
+            Points de vente
           </h2>
         </div>
 
@@ -169,6 +169,7 @@ export default function StoreMap() {
 
           <div style={{ position: "relative" as const, display: "inline-block" }}>
             <select
+              className="city-select"
               value={selectedCity}
               onChange={(e) => { setSelectedCity(e.target.value); setActiveStore(null); }}
               style={{
@@ -301,6 +302,8 @@ export default function StoreMap() {
       </div>
 
       <style>{`
+        .city-select:focus { outline: none !important; box-shadow: none !important; }
+        .city-select option { background: #E8006E; color: #fff; }
         .leaflet-container { font-family: 'Georgia', serif !important; }
         .leaflet-popup-content-wrapper {
           border-radius: 2px !important;

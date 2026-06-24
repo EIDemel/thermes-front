@@ -36,14 +36,14 @@ export default async function NosPointsDeVente() {
       <main style={{ padding: "4rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
 
         <p style={{ marginTop: "1rem", fontSize: "1.6rem", color: "#485F63", textAlign: "center" }}>
-           Nous travaillons à rendre Thermes disponible au plus près de chez vous. <br />Vous pouvez d’ors et déjà vous procurer la revue dans les points de vente ci-dessous.
+           Nous travaillons à rendre Thermes disponible au plus près de chez vous. <br />Vous pouvez d’ores et déjà vous procurer la revue dans les points de vente ci-dessous.
         </p>
 
         {/* CARTE INTERACTIVE — Client Component */}
         <StoreMap />
         {/* texte explicatif que c'est que pour les parisiens  */}
         <p style={{ marginTop: "1rem", fontSize: "1.2rem", color: "#485F63", textAlign: "center" }}>
-          Ami.es parisien.nes, vous pouvez également commander la revue ci-dessous et un membre de l'équipe viendra vous l'apportez au lieu de votre choix ! Pour des raisons de transports, ce service n'est disponible <b>uniquement à Paris</b>.
+          Ami.es parisien.nes, vous pouvez également commander la revue ci-dessous et un membre de l'équipe viendra vous l'apporter au lieu de votre choix ! Pour des raisons de transports, ce service est disponible <b>uniquement à Paris</b>.
         </p>
 
 

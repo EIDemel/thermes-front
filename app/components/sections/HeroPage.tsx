@@ -34,7 +34,7 @@ export default function HeroPage({ posts }: { posts: any[] }) {
 
         <div style={{ position: "absolute", top: "20%", left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
           <div style={{ alignSelf: "center", background: "#E8006E", padding: "0.6rem 1.2rem", maxWidth: "60%" }}>
-            <p style={{ margin: 0, color: "#FF6EB4", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
+            <p style={{ margin: 0, color: "#FFB8DA", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
               Lac noir, barque noire, deux silhouettes de papier découpé, noires.<br />
               Jusqu'où s'étendent les arbres noirs qui s'abreuvent ici ?
             </p>

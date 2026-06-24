@@ -1,16 +1,15 @@
 "use client";
-
-import { useState, useRef, useEffect } from "react";
-
+ 
+import { useState, useEffect } from "react";
+ 
 type Member = {
   name: string;
   role: string;
   image: string;
   bio: string;
 };
-
+ 
 const members: Member[] = [
-  
   {
     name: "Nina Gayet",
     role: "",
@@ -35,56 +34,48 @@ const members: Member[] = [
     image: "/images/trombinoscope/PPOSCAR.png",
     bio: "Hello, moi c'est Oscar, j'ai 22 ans, je fais du théâtre, de la scéno surtout, et j'aime beaucoup ça ! Parce que c'est bien dur de se résumer en quelques lignes voici pèle mêles des trucs que j'aime : le vert, les jeux de société, les salopettes, cuisiner, le drag et m'endormir au soleil.",
   },
-//   {
-//     name: "OSCAR",
-//     role: "Graphiste",
-//     image: "/images/trombinoscope/OSCAR.jpg",
-//     bio: "Oscar construit l'identité visuelle de Thermes — typographies, grilles, couleurs — et donne à la revue sa silhouette reconnaissable.",
-//   },
 ];
-
+ 
 const BG_COLORS = ["#E8006E", "#485F63", "#F26522"];
-
-const CARD_SIZE = 300;
-
-function MemberCard({ member, index }: { member: Member; index: number }) {
-  const [isActive, setIsActive] = useState(false);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const [panelHeight, setPanelHeight] = useState(0);
-
-  useEffect(() => {
-    if (panelRef.current) {
-      setPanelHeight(panelRef.current.scrollHeight);
-    }
-  }, []);
-
-  const totalHeight = isActive ? CARD_SIZE + panelHeight : CARD_SIZE;
-  const bgColor = BG_COLORS[index % 3];
-
+ 
+function MemberCard({
+  member,
+  index,
+  isMobile,
+}: {
+  member: Member;
+  index: number;
+  isMobile: boolean;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  const bgColor = BG_COLORS[index % BG_COLORS.length];
+ 
+  // On mobile the panel is always visible; on desktop it appears on hover
+  const showPanel = isMobile || isHovered;
+ 
   return (
     <div
-      onMouseEnter={() => setIsActive(true)}
-      onMouseLeave={() => setIsActive(false)}
+      onMouseEnter={() => !isMobile && setIsHovered(true)}
+      onMouseLeave={() => !isMobile && setIsHovered(false)}
       style={{
-        position: "relative",
-        width: `${CARD_SIZE}px`,
-        height: `${totalHeight}px`,
-        overflow: "hidden",
-        cursor: "pointer",
+        display: "flex",
+        flexDirection: "column",
+        cursor: isMobile ? "default" : "pointer",
+        boxShadow: isHovered ? "0 10px 32px rgba(0,0,0,0.22)" : "none",
+        transition: "box-shadow 0.3s ease",
+        // On mobile take full width; on desktop fixed 260px
+        width: isMobile ? "100%" : "260px",
         flexShrink: 0,
-        transition: "height 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease",
-        boxShadow: isActive ? "0 10px 32px rgba(0,0,0,0.22)" : "none",
       }}
     >
       {/* Photo */}
       <div
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: `${CARD_SIZE}px`,
-          height: `${CARD_SIZE}px`,
+          width: "100%",
+          aspectRatio: "1 / 1",
+          overflow: "hidden",
           background: bgColor,
+          position: "relative",
         }}
       >
         <img
@@ -96,37 +87,38 @@ function MemberCard({ member, index }: { member: Member; index: number }) {
             objectFit: "cover",
             display: "block",
             transition: "transform 0.45s ease",
-            transform: isActive ? "scale(1.05)" : "scale(1)",
+            transform: isHovered ? "scale(1.05)" : "scale(1)",
           }}
         />
+        {/* subtle dark overlay on hover (desktop) */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             background: "rgba(0,0,0,0.15)",
-            opacity: isActive ? 1 : 0,
+            opacity: isHovered ? 1 : 0,
             transition: "opacity 0.3s ease",
+            pointerEvents: "none",
           }}
         />
       </div>
-
-      {/* Info panel */}
+ 
+      {/* Info panel — always rendered in the flow, opacity + max-height transition */}
       <div
-        ref={panelRef}
         style={{
-          position: "absolute",
-          top: `${CARD_SIZE}px`,
-          left: 0,
-          width: `${CARD_SIZE}px`,
           background: bgColor,
+          padding: "0.85rem 0.9rem",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
-          padding: "0.85rem 0.9rem",
           gap: "0.4rem",
-          opacity: isActive ? 1 : 0,
-          transition: "opacity 0.2s ease " + (isActive ? "0.2s" : "0s"),
+          // Smooth reveal: max-height trick keeps layout in flow (no overlap)
+          maxHeight: showPanel ? "600px" : "0px",
+          overflow: "hidden",
+          opacity: showPanel ? 1 : 0,
+          transition: isMobile
+            ? "none"
+            : "max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease",
         }}
       >
         <span
@@ -141,7 +133,7 @@ function MemberCard({ member, index }: { member: Member; index: number }) {
         >
           {member.name}
         </span>
-
+ 
         <div
           style={{
             width: "28px",
@@ -150,24 +142,26 @@ function MemberCard({ member, index }: { member: Member; index: number }) {
             flexShrink: 0,
           }}
         />
-
-        <span
-          style={{
-            fontSize: "0.75rem",
-            color: "rgba(255,255,255,0.65)",
-            textAlign: "center",
-            letterSpacing: "0.04em",
-            textTransform: "uppercase",
-            lineHeight: 1.4,
-          }}
-        >
-          {member.role}
-        </span>
-
+ 
+        {member.role && (
+          <span
+            style={{
+              fontSize: "0.75rem",
+              color: "rgba(255,255,255,0.65)",
+              textAlign: "center",
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              lineHeight: 1.4,
+            }}
+          >
+            {member.role}
+          </span>
+        )}
+ 
         <p
           style={{
             fontSize: "0.75rem",
-            color: "rgba(255,255,255,0.8)",
+            color: "rgba(255,255,255,0.88)",
             textAlign: "center",
             lineHeight: 1.55,
             margin: 0,
@@ -179,41 +173,68 @@ function MemberCard({ member, index }: { member: Member; index: number }) {
     </div>
   );
 }
-
+ 
 export default function Trombinoscope() {
+  const [isMobile, setIsMobile] = useState(false);
+ 
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 700px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+ 
   const rows =
     members.length <= 3
       ? [members]
       : [members.slice(0, 3), members.slice(3)];
-
+ 
   return (
     <div
       style={{
-        maxWidth: "800px",
+        maxWidth: "900px",
         margin: "3rem auto",
         padding: "0 1rem",
       }}
     >
-      {rows.map((row, rowIdx) => (
+      {isMobile ? (
+        // Mobile: single column, full width
         <div
-          key={rowIdx}
           style={{
             display: "flex",
-            justifyContent: "center",
-            gap: "2.5rem",
-            marginBottom: rowIdx < rows.length - 1 ? "2.5rem" : 0,
-            alignItems: "flex-start",
+            flexDirection: "column",
+            gap: "2rem",
           }}
         >
-          {row.map((member, colIdx) => (
-            <MemberCard
-              key={member.name}
-              member={member}
-              index={rowIdx * 3 + colIdx}
-            />
+          {members.map((member, idx) => (
+            <MemberCard key={member.name} member={member} index={idx} isMobile={true} />
           ))}
         </div>
-      ))}
+      ) : (
+        // Desktop: row layout (3 + remainder)
+        rows.map((row, rowIdx) => (
+          <div
+            key={rowIdx}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "2rem",
+              marginBottom: rowIdx < rows.length - 1 ? "2rem" : 0,
+              alignItems: "flex-start",
+            }}
+          >
+            {row.map((member, colIdx) => (
+              <MemberCard
+                key={member.name}
+                member={member}
+                index={rowIdx * 3 + colIdx}
+                isMobile={false}
+              />
+            ))}
+          </div>
+        ))
+      )}
     </div>
   );
 }

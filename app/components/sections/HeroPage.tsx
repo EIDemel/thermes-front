@@ -70,11 +70,11 @@ export default function HeroPage({ posts }: { posts: any[] }) {
         <div style={{ padding: "10px clamp(1rem, 10vw, 250px)", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", display: "flex", height: "auto", width: "100%", justifyContent: "center", alignItems: "center", backgroundColor: "#E8006E", color: "#FFB8DA", textAlign: "center" }}>
           Thermes est une revue de cinéma pensée par toutes et tous, pour toutes et tous. Imaginé à partir d’un vers de poésie, chaque numéro juxtapose les arts et les visions, encourage la création autour des films. Nous sommes perpétuellement à la recherche de nouveaux.elles contributeur.ices, pour proposer toutes formes de création autour du cinéma.<br />
         </div>
-        <div style={{ padding:"10px 10px 0px 10px", margin: 0, fontSize: "clamp(0.6rem, 1vw, 0.95rem)", display: "flex", height: "auto", width: "100%", justifyContent: "left", alignItems: "left", backgroundColor: "#F26522", color: "#FFB499", textAlign: "left" }}>
-          <sup>1</sup> Crossing Waters, Sylvia Plath, édition Faber and Faber Limited, 1971.  <br />
+        <div style={{  padding:"10px 10px 0px 10px", margin: 0, fontSize: "clamp(0.6rem, 1vw, 0.95rem)", display: "flex", height: "auto", width: "100%", justifyContent: "left", alignItems: "left", backgroundColor: "#F26522", color: "#FFB499", textAlign: "left" }}>
+          <sup>1</sup> Arbres d'Hiver précédé de La Traversée, Sylvia Plath, traduction par Françoise Morvan et Valérie Rousseau édition Gallimard, 1999.   
         </div>
         <div style={{ padding:"0px 10px 10px 10px", margin: 0, fontSize: "clamp(0.6rem, 1vw, 0.95rem)", display: "flex", height: "auto", width: "100%", justifyContent: "left", alignItems: "left", backgroundColor: "#F26522", color: "#FFB499", textAlign: "left" }}>
-          <sup>2</sup> Arbres d'Hiver précédé de La Traversée, Sylvia Plath, traduction par Françoise Morvan et Valérie Rousseau édition Gallimard, 1999.   
+          <sup>2</sup> Crossing Waters, Sylvia Plath, édition Faber and Faber Limited, 1971.  <br />
         </div>
         <div style={{ display: "flex", height: "500px", width: "100%" }}>
           {posts.slice(0, 5).map((post: any, index: number) => {

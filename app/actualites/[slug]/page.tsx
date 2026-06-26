@@ -1,7 +1,7 @@
 import Header from "../../components/layout/Header";
 import { notFound } from "next/navigation";
-import PdfViewer from "./PdfViewer";
 import Footer from "@/app/components/layout/Footer";
+import OpenLinksInNewTab from "./OpenLinksInNewTab";
 
 async function getNumero(slug: string) {
   const res = await fetch(
@@ -43,6 +43,7 @@ export default async function NumeroPage({
   return (
     <>
       <Header />
+      <OpenLinksInNewTab />
 
       {image && (
         <div style={{ position: "relative", height: "60vh", width: "100%", overflow: "hidden" }}>
@@ -103,7 +104,8 @@ export default async function NumeroPage({
         {extractPdfUrl(post.content.rendered) && (
           <a
             href={extractPdfUrl(post.content.rendered)!}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -124,7 +126,6 @@ export default async function NumeroPage({
             Télécharger le PDF
           </a>
         )}
-
       </main>
 
       <Footer />

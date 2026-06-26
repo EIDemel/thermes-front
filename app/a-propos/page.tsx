@@ -47,8 +47,9 @@ export default async function NosNumeros() {
           <h3><img src="/images/logo-thermes-noir.png" alt="Logo Thermes" style={{ width: "75px", marginBottom: "1rem", verticalAlign: "middle" }} /> </h3>
 
           <p style={{ fontSize: "1.25rem", lineHeight: 1.6, color: "#333" }}>
-            <b>THERMES</b> est une revue de cinéma pensée par toutes et tous, pour toutes et tous. <br />
-            Imaginé à partir d’un vers de poésie, chaque numéro juxtapose les arts et les visions, encourage la création autour des films. Nous sommes perpétuellement à la recherche de nouveaux.elles contributeur.ices, pour proposer toutes formes de création autour du cinéma.
+            <b>THERMES</b> est une revue de cinéma par toutes et tous, pour toutes et tous, née en septembre 2025. <br />
+            Elle est un espace d’expression et de création autour des films, comme une aire de jeux, expérimentale, pensée par Simon, Sacha et Diane, les fondateurs. <br />
+            Imaginé à partir d’un vers de poésie, chaque numéro de Thermes juxtapose les arts et les visions, encourage la réflexion autour du cinéma. Tout volontaire est le.a bienvenu.e pour créer, écrire, imaginer cette revue, sans expériences, âges, ou profil particulier. Nous sommes perpétuellement à la recherche de nouveaux.elles contributeur.ices pour proposer articles écrits, dessins, poésies, photographies...  
           </p>
         </div>
 
@@ -70,7 +71,7 @@ export default async function NosNumeros() {
 
         {/* Trombinoscope — 3 + 2 layout avec overlay hover */}
         <div style={{ maxWidth: "1200px", margin: "2rem auto", padding: "0 1rem" }}>
-          <h3 style={{ fontSize: "1.25rem", lineHeight: 1.6, color: "#333" }}><b> NOUS DECOUVRIR </b></h3>
+          <h3 style={{ fontSize: "1.25rem", lineHeight: 1.6, color: "#333" }}><b> NOUS DÉCOUVRIR </b></h3>
           <Trombinoscope />
         </div>
 

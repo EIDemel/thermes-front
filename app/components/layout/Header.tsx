@@ -45,9 +45,6 @@ export default function Header() {
           border-bottom: 1px solid rgba(0,0,0,0.08);
           box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-        .nav-link:hover {
-          background: #E8006E;
-        }
         .nav-links {
           display: flex;
           gap: 0.5rem;
@@ -142,8 +139,20 @@ export default function Header() {
                 key={href}
                 href={href}
                 className="nav-link"
-                style={isActive ? { background: ACTIVE_COLORS[href] ?? "#F26522" } : undefined}
-              >
+                style={
+                  isActive
+                    ? { background: ACTIVE_COLORS[href] ?? "#F26522" }
+                    : undefined
+              }
+              onMouseEnter={e => {
+                if (!isActive)
+                  e.currentTarget.style.background = ACTIVE_COLORS[href] ?? "#F26522";
+              }}
+              onMouseLeave={e => {
+                if (!isActive)
+                  e.currentTarget.style.background = "";
+              }}
+            >
                 {label}
               </a>
             );

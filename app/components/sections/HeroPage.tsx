@@ -48,9 +48,9 @@ export default function HeroPage({ posts }: { posts: any[] }) {
               <p style={{ margin: 0, color: "#FFB8DA", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
                 Lac noir, barque noire, deux silhouettes de papier découpé, noires.<br />
                 Jusqu'où s'étendent les arbres noirs qui s'abreuvent ici ?
-                <p style={{ margin: 0, color: "#FFB8DA", fontSize: "clamp(0.65rem, 0.5vw, 0.15rem)", textAlign: "center", lineHeight: 1.4 }}>
-                  Arbres d'Hiver précédé de La Traversée, Sylvia Plath, traduction par Françoise Morvan et Valérie Rousseau édition Gallimard, 1999
-                </p>
+              </p>
+              <p style={{ margin: 0, color: "#FFB8DA", fontSize: "clamp(0.65rem, 0.5vw, 0.15rem)", textAlign: "center", lineHeight: 1.4 }}>
+                Arbres d'Hiver précédé de La Traversée, Sylvia Plath, traduction par Françoise Morvan et Valérie Rousseau édition Gallimard, 1999
               </p>
             </div>
 
@@ -58,9 +58,9 @@ export default function HeroPage({ posts }: { posts: any[] }) {
               <p style={{ margin: 0, color: "#FFB499", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
                 Black lake, black boat, two black, cut-paper people.<br />
                 Where do the black trees go that drink here ? 
-                <p style={{ margin: 0, color: "#FFB499", fontSize: "clamp(0.65rem, 0.5vw, 0.15rem)", textAlign: "center", lineHeight: 1.4 }}>
-                  Crossing Waters, Sylvia Plath, édition Faber and Faber Limited, 1971
-                </p>
+              </p>
+              <p style={{ margin: 0, color: "#FFB499", fontSize: "clamp(0.65rem, 0.5vw, 0.15rem)", textAlign: "center", lineHeight: 1.4 }}>
+                Crossing Waters, Sylvia Plath, édition Faber and Faber Limited, 1971
               </p>
             </div>
           </div>
@@ -77,15 +77,12 @@ export default function HeroPage({ posts }: { posts: any[] }) {
               backgroundColor: "#485F63",
               padding: "clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 5vw, 4rem)",
               fontSize: "clamp(0.75rem, 1.5vw, 1.15rem)",
-              color: "#9BA8AA",
+              color: "#FFFFFF",
               textAlign: "center",
               lineHeight: 1.6,
               fontWeight: 700,
             }}>
-              Thermes est une revue de cinéma pensée par toutes et tous, pour toutes et tous.
-              Imaginé à partir d'un vers de poésie, chaque numéro juxtapose les arts et les visions,
-              encourage la création autour des films. Nous sommes perpétuellement à la recherche de
-              nouveaux.elles contributeur.ices, pour proposer toutes formes de création autour du cinéma.
+              Thermes est une revue de cinéma imaginée à partir d'un vers de poésie. Chaque numéro tisse des mots, des images,  des visions, encourage la création autour des films.
             </div>
           </div>
 

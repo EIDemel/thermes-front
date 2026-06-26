@@ -130,15 +130,6 @@ export default function StoreMap() {
 
         {/* Section header */}
         <div style={{ marginBottom: "2.5rem" }}>
-          <p style={{
-            margin: "0 0 0.6rem",
-            fontSize: "0.72rem",
-            letterSpacing: "0.22em",
-            textTransform: "uppercase" as const,
-            color: "#999",
-          }}>
-            Où nous trouver
-          </p>
           <h2 style={{
             margin: 0,
             fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
@@ -146,7 +137,7 @@ export default function StoreMap() {
             color: "#485F63",
             lineHeight: 1.15,
           }}>
-            Points de vente
+           Où nous trouver ?
           </h2>
         </div>
 

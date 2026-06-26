@@ -10,11 +10,9 @@ type Member = {
 };
  
 const members: Member[] = [
+  
   {
-    name: "Nina Gayet",
-    role: "",
-    image: "/images/trombinoscope/PPNINA.png",
-    bio: "Yo moi c'est Nina, j'ai 22 ans, toutes mes dents mais plus de sourcils depuis septembre (j'en ai fait un trait de personnalité). Je suis au comité de rédaction et éditrice en cheffe de Thermes! à côté je travaille sur Youssef Chahine en master d'histoire du ciné, je suis surveillante, je bosse chez Paradoxe (qui produit Thermes) et j'écris un peu de tout. quand je suis pas au café ou au ciné je fais des playlists (c'est chronophage mais merveilleux) et j'adore ça.",
+    name: "Simon Devaux",
   },
   {
     name: "Sacha Festy",
@@ -33,6 +31,12 @@ const members: Member[] = [
     role: "",
     image: "/images/trombinoscope/PPOSCAR.png",
     bio: "Hello, moi c'est Oscar, j'ai 22 ans, je fais du théâtre, de la scéno surtout, et j'aime beaucoup ça ! Parce que c'est bien dur de se résumer en quelques lignes voici pèle mêles des trucs que j'aime : le vert, les jeux de société, les salopettes, cuisiner, le drag et m'endormir au soleil.",
+  },
+  {
+    name: "Nina Gayet",
+    role: "",
+    image: "/images/trombinoscope/PPNINA.png",
+    bio: "Yo moi c'est Nina, j'ai 22 ans, toutes mes dents mais plus de sourcils depuis septembre (j'en ai fait un trait de personnalité). Je suis au comité de rédaction et éditrice en cheffe de Thermes! à côté je travaille sur Youssef Chahine en master d'histoire du ciné, je suis surveillante, je bosse chez Paradoxe (qui produit Thermes) et j'écris un peu de tout. quand je suis pas au café ou au ciné je fais des playlists (c'est chronophage mais merveilleux) et j'adore ça.",
   },
 ];
  

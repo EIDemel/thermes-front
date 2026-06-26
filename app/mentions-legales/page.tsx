@@ -9,7 +9,7 @@ export default async function MentionsLegales() {
       {/* HERO */}
       <div style={{ position: "relative", height: "100vh", width: "100%", overflow: "hidden" }}>
         <img
-          src="/images/a_propos.jpeg"
+          src="/images/MENNTIONS_LEGALES.jpg"
           alt="Mentions légales"
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
         />

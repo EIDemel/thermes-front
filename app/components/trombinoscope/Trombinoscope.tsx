@@ -10,10 +10,6 @@ type Member = {
 };
  
 const members: Member[] = [
-  
-  {
-    name: "Simon Devaux",
-  },
   {
     name: "Sacha Festy",
     role: "",

@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo-thermes-rose.ico",
   },
+  verification: {
+    google: "K5nUKCS9XNYDZZuc2GhB9nT6hC0SgnS3Bv7iL9sgnm4",
+  },
 };
 
 export default function RootLayout({

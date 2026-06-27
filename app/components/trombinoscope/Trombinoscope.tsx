@@ -12,27 +12,27 @@ type Member = {
 const members: Member[] = [
   {
     name: "Sacha Festy",
-    role: "",
+    role: "CO-REDACTEUR EN CHEF",
     image: "/images/trombinoscope/PPSACHA.png",
     bio: "Je suis étudiant en littérature comparée, maraîcher le jour, fan absolu de Die Hard et de Stévenin la nuit, amateur de poésies, documentaires, et de tout type d'expérimentations intermédiales le jour. Un gros curieux finalement.",
   },
   {
     name: "Diane Perroux",
-    role: "",
+    role: "CO-REDACTRICE EN CHEFFE",
     image: "/images/trombinoscope/PPDIANE.png",
     bio: "Moi c'est Diane, 21 ans, je suis co-rédactrice en cheffe de Thermes. J'aime le montage et le bricolage, écrire sur le cinéma et quelquefois pour des films, je m'éparpille le jour puis je dors beaucoup la nuit. Plus tard je ferai des expérimentations en résine, je reprendrai la danse, je me couperai les cheveux courts et j'apprendrai la guitare, mais pour le moment je travaille sur mon film de master en écoutant PJ Harvey, et ça me ravit.",
   },
   {
     name: "Oscar Griveau",
-    role: "",
+    role: "MAQUETISTE ET COORDINATEUR GRAPHIQUE",
     image: "/images/trombinoscope/PPOSCAR.png",
     bio: "Hello, moi c'est Oscar, j'ai 22 ans, je fais du théâtre, de la scéno surtout, et j'aime beaucoup ça ! Parce que c'est bien dur de se résumer en quelques lignes voici pèle mêles des trucs que j'aime : le vert, les jeux de société, les salopettes, cuisiner, le drag et m'endormir au soleil.",
   },
   {
     name: "Nina Gayet",
-    role: "",
+    role: "ÉDITRICE EN CHEFFE",
     image: "/images/trombinoscope/PPNINA.png",
-    bio: "Yo moi c'est Nina, j'ai 22 ans, toutes mes dents mais plus de sourcils depuis septembre (j'en ai fait un trait de personnalité). Je suis au comité de rédaction et éditrice en cheffe de Thermes! à côté je travaille sur Youssef Chahine en master d'histoire du ciné, je suis surveillante, je bosse chez Paradoxe (qui produit Thermes) et j'écris un peu de tout. quand je suis pas au café ou au ciné je fais des playlists (c'est chronophage mais merveilleux) et j'adore ça.",
+    bio: "Yo moi c'est Nina, j'ai 22 ans, toutes mes dents mais plus de sourcils depuis septembre (j'en ai fait un trait de personnalité). Je suis au comité de rédaction et éditrice en cheffe de Thermes ! À côté, je travaille sur Youssef Chahine en master d'histoire du ciné, je suis surveillante, je bosse chez Paradoxe et j'écris un peu de tout. Quand je ne suis pas au café ou au ciné, je fais des playlists (c'est chronophage mais merveilleux) et j'adore ça.",
   },
 ];
  

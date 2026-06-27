@@ -82,7 +82,8 @@ export default function Contact() {
             lineHeight: 1.8,
             color: "#333",
           }}>
-            Nous sommes perpétuellement à la recherche de nouveaux·elles contributeur·ices pour la revue. Articles, dessins, photographies… Toutes les créations et propositions sont les bienvenues.
+            Nous sommes perpétuellement à la recherche de nouveaux·elles contributeur·ices pour la revue. <br />
+            Articles, dessins, photographies… Toutes les créations et propositions sont les bienvenues.
           </p>
           <p style={{
             margin: "0 0 3rem",
@@ -150,6 +151,8 @@ export default function Contact() {
             <a
               href="https://www.linkedin.com/company/thermes-revue/"
               className="contact-btn-dark"
+              target="_blank"
+              rel="noopener noreferrer" 
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -169,7 +172,7 @@ export default function Contact() {
                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z"/>
               </svg>
 
-              <span style={{ fontWeight: 500 }}>LinkedIn</span>
+              <span style={{ fontWeight: 500 }}>thermes-revue</span>
             </a>
 
           </div>

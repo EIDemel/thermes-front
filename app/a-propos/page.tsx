@@ -47,9 +47,9 @@ export default async function NosNumeros() {
           <h3><img src="/images/logo-thermes-noir.png" alt="Logo Thermes" style={{ width: "75px", marginBottom: "1rem", verticalAlign: "middle" }} /> </h3>
 
           <p style={{ fontSize: "1.25rem", lineHeight: 1.6, color: "#333" }}>
-            <b>THERMES</b> est une revue de cinéma par toutes et tous, pour toutes et tous, née en septembre 2025. <br />
-            Elle est un espace d’expression et de création autour des films, comme une aire de jeux, expérimentale, pensée par Simon, Sacha et Diane, ses fondateurs. <br />
-            Imaginé à partir d’un vers de poésie, chaque numéro de Thermes juxtapose les arts et les visions, encourage la réflexion autour du cinéma. Tout volontaire est le.a bienvenu.e pour créer, écrire, imaginer cette revue, sans expériences, âges, ou profil particulier. Nous sommes perpétuellement à la recherche de nouveaux.elles contributeur.ices pour proposer articles écrits, dessins, poésies, photographies...  
+            <b>THERMES</b> est une revue de cinéma, née en  2025.<br />
+            Elle est un espace d’expression et de création autour des films, comme une aire de jeux, expérimentale. Pensée par Simon, Sacha et Diane, ses fondateurs, augmentée par chacun.e de ses contributeur.ice.
+            Imaginé à partir d’un vers de poésie, chaque numéro de Thermes juxtapose les arts et les visions, encourage la réflexion autour du cinéma. Tout.e volontaire est le.a bienvenu.e pour créer, écrire, imaginer cette revue, sans restriction d'âge, d'expérience, ou de profil. <br /> Nous sommes perpétuellement à la recherche de nouveaux.elles contributeur.ices pour proposer articles écrits, dessins, poésies, photographies...  
           </p>
         </div>
 

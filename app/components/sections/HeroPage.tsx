@@ -77,7 +77,7 @@ export default function HeroPage({ posts }: { posts: any[] }) {
               backgroundColor: "#485F63",
               padding: "clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 5vw, 4rem)",
               fontSize: "clamp(0.75rem, 1.5vw, 1.15rem)",
-              color: "#FFFFFF",
+              color: "#B6BFC1",
               textAlign: "center",
               lineHeight: 1.6,
               fontWeight: 700,

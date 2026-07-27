@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Thermes",
+  title: "Thermes - Revue de cinéma",
   description: "La revue de Thermes",
   icons: {
     icon: "/logo-thermes-rose.ico",

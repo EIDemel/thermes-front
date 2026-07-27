@@ -1,10 +1,23 @@
 "use client";
 
-import { link } from "fs";
 import { useRef } from "react";
+import { usePathname } from "next/navigation";
+
+const footerLinks = [
+  { label: "OÙ NOUS TROUVER ?", href: "/nos-points-de-vente" },
+  { label: "MENTIONS LÉGALES", href: "/mentions-legales" },
+  { label: "CONTACT", href: "/contact" },
+];
+
+const ACTIVE_COLORS: Record<string, string> = {
+  "/nos-points-de-vente": "#E8006E",
+  "/mentions-legales": "#F26522",
+  "/contact": "#E8006E",
+};
 
 export default function Footer() {
   const marqueeRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   return (
     <footer style={{ background: "#485F63", color: "white", fontFamily: "'Oswald', sans-serif" }}>
@@ -62,23 +75,24 @@ export default function Footer() {
         {/* Icônes réseaux */}
         <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginBottom: "1.5rem" }}>
           {[
-        {
-            label: "Instagram",
-            href: "https://www.instagram.com/revuethermes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-            path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M6.5 19.5h11a3 3 0 003-3v-11a3 3 0 00-3-3h-11a3 3 0 00-3 3v11a3 3 0 003 3z"
-        },
-        {
-            label: "LinkedIn",
-            href: "https://www.linkedin.com/company/thermes-revue/?viewAsMember=true",
-            path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z"
-        }   
-        ].map(({ label, href, path }) => (
+            {
+              label: "Instagram",
+              href: "https://www.instagram.com/revuethermes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+              path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M6.5 19.5h11a3 3 0 003-3v-11a3 3 0 00-3-3h-11a3 3 0 00-3 3v11a3 3 0 003 3z"
+            },
+            {
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/company/thermes-revue/?viewAsMember=true",
+              path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z"
+            }
+          ].map(({ label, href, path }) => (
             <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social"
+              style={{
                 width: "38px",
                 height: "38px",
                 borderRadius: "50%",
@@ -86,22 +100,39 @@ export default function Footer() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                }}
+              }}
             >
-                <svg width="16" height="16" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24">
+              <svg width="16" height="16" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24">
                 <path d={path} />
-                </svg>
+              </svg>
             </a>
-            ))}
+          ))}
         </div>
 
         {/* Liens bas */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "2rem", fontSize: "0.75rem", letterSpacing: "0.1em", opacity: 0.6 }}>
-          {[
-            {label: "OÙ NOUS TROUVER ?", link: "/nos-points-de-vente"}, {label: "MENTIONS LÉGALES", link: "/mentions-legales"}, {label: "CONTACT", link: "/contact"}
-          ].map(link => (
-            <a key={link.label} href={link.link} style={{ color: "white", textDecoration: "none" }}>{link.label}</a>
-          ))}
+        <div style={{ display: "flex", justifyContent: "center", gap: "2rem", fontSize: "0.75rem", letterSpacing: "0.1em" }}>
+          {footerLinks.map(({ label, href }) => {
+            const isActive = pathname === href;
+            const color = ACTIVE_COLORS[href] ?? "#F26522";
+            return (
+              <a
+                key={label}
+                href={href}
+                className="footer-link"
+                style={isActive ? { color, opacity: 1 } : undefined}
+                onMouseEnter={(e) => {
+                  if (!isActive) e.currentTarget.style.color = color;
+                  e.currentTarget.style.opacity = "1";
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) e.currentTarget.style.color = "white";
+                  if (!isActive) e.currentTarget.style.opacity = "0.6";
+                }}
+              >
+                {label}
+              </a>
+            );
+          })}
         </div>
       </div>
 
@@ -109,6 +140,21 @@ export default function Footer() {
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
+        }
+
+        .footer-link {
+          color: white;
+          text-decoration: none;
+          opacity: 0.6;
+          transition: color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .footer-social {
+          transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .footer-social:hover {
+          background-color: rgba(255,255,255,0.15);
+          transform: translateY(-2px);
         }
       `}</style>
     </footer>

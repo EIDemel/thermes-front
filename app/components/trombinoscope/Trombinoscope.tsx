@@ -10,6 +10,13 @@ type Member = {
 };
  
 const members: Member[] = [
+  
+  {
+    name: "Simon Devaux",
+    role: "DIRECTEUR DE LA PUBLICATION",
+    image: "/images/trombinoscope/PPSIMON.png",
+    bio: "Je m'appelle Simon, et suis directeur de publication de Thermes. La revue est dans la continuité de ce que j'aime, à savoir le cinéma et tout le reste. J'essaie de faire de l'histoire du cinéma à la fac, je vais en concert quand je peux, sinon je trouve des prétextes pour voir mes êtres chers (créer une revue de cinéma par exemple).",
+  },
   {
     name: "Sacha Festy",
     role: "CO-REDACTEUR EN CHEF",

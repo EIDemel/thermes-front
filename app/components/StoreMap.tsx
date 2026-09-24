@@ -61,10 +61,10 @@ export default function StoreMap() {
     });
 
     L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?language=fr",
+      "https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3wng_1_08531ac16bd4ad898f47f439",
       {
         attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         maxZoom: 19,
       }
     ).addTo(map);

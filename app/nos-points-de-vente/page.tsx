@@ -49,16 +49,21 @@ export default async function NosPointsDeVente() {
 
         
         <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
-          <a href="https://www.helloasso.com/associations/paradoxe-medias-res/boutiques/thermes" style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.6rem",
-            background: "#E8006E",
-            color: "#fff",
-            padding: "0.75rem 1.8rem",
-            fontWeight: 500,
-            textDecoration: "none",
-          }}>
+          <a
+            href="https://www.helloasso.com/associations/paradoxe-medias-res/boutiques/thermes"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.6rem",
+              background: "#E8006E",
+              color: "#fff",
+              padding: "0.75rem 1.8rem",
+              fontWeight: 500,
+              textDecoration: "none",
+            }}
+          >
             Se faire livrer
           </a>
         </div>

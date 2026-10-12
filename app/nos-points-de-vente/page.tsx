@@ -49,7 +49,7 @@ export default async function NosPointsDeVente() {
 
         
         <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
-          <a href="helloasso" style={{
+          <a href="https://www.helloasso.com/associations/paradoxe-medias-res/boutiques/thermes" style={{
             display: "inline-flex",
             alignItems: "center",
             gap: "0.6rem",

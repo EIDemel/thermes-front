@@ -43,7 +43,7 @@ export default async function NosPointsDeVente() {
         <StoreMap />
         {/* texte explicatif que c'est que pour les parisiens  */}
         <p style={{ marginTop: "1rem", fontSize: "1.2rem", color: "#485F63", textAlign: "center" }}>
-          Ami.es parisien.nes, vous pouvez également commander la revue ci-dessous et un membre de l'équipe viendra vous l'apporter au lieu de votre choix ! Pour des raisons de transports, ce service est disponible <b>uniquement à Paris</b>.
+          Vous pouvez également commander la revue ci-dessous et vous la faire livrer partout en <b>France</b> ( 5€ de frais de livraison ) !
         </p>
 
 

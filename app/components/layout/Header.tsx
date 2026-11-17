@@ -6,19 +6,20 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Thermes" },
   { href: "/nos-numeros", label: "Numéros" },
-  { href: "/nos-points-de-vente", label: "Points de vente" },
   { href: "/actualites", label: "Actualités" },
   { href: "/a-propos", label: "À propos" },
   { href: "/contact", label: "Contact" },
+  { href: "/nos-points-de-vente", label: "Acheter la revue" },
+
 ];
 
 const ACTIVE_COLORS: Record<string, string> = {
   "/": "#E8006E",
   "/nos-numeros": "#F26522",
-  "/nos-points-de-vente": "#E8006E",
-  "/actualites": "#F26522",
-  "/a-propos": "#E8006E",
-  "/contact": "#F26522",
+  "/actualites": "#E8006E",
+  "/a-propos": "#F26522",
+  "/contact": "#E8006E",
+  "/nos-points-de-vente": "#F26522",
 };
 
 export default function Header() {

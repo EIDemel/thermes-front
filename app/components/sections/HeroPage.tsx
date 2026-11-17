@@ -25,6 +25,13 @@ export default function HeroPage({ posts }: { posts: any[] }) {
           0%, 100% { transform: translateX(-50%) translateY(0); }
           50% { transform: translateX(-50%) translateY(8px); }
         }
+        @keyframes expandFromCenter {
+          from { clip-path: inset(0 50% 0 50%); }
+          to   { clip-path: inset(0 0 0 0); }
+        }
+        .expand-box {
+          animation: expandFromCenter 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { overflow-x: hidden; }
       `}</style>
@@ -45,22 +52,35 @@ export default function HeroPage({ posts }: { posts: any[] }) {
 
           <div style={{ position: "absolute", top: "20%", left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
             <div style={{ alignSelf: "center", background: "#E8006E", padding: "0.6rem 1.2rem", maxWidth: "60%" }}>
-              <p style={{ margin: 0, color: "#FFB8DA", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
+              <p style={{ margin: 0, color: "#FFE6F1", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
                 Lac noir, barque noire, deux silhouettes de papier découpé, noires.<br />
                 Jusqu'où s'étendent les arbres noirs qui s'abreuvent ici ?
               </p>
-              <p style={{ margin: 0, color: "#FFB8DA", fontSize: "clamp(0.65rem, 0.5vw, 0.15rem)", textAlign: "center", lineHeight: 1.4 }}>
+              <p style={{ margin: 0, color: "#FFE6F1", fontSize: "clamp(0.65rem, 0.5vw, 0.15rem)", textAlign: "center", lineHeight: 1.4 }}>
                 Arbres d'Hiver précédé de La Traversée, Sylvia Plath, traduction par Françoise Morvan et Valérie Rousseau édition Gallimard, 1999
               </p>
             </div>
 
             <div style={{ alignSelf: "center", background: "#F26522", padding: "0.6rem 1.2rem", maxWidth: "55%" }}>
-              <p style={{ margin: 0, color: "#FFB499", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
+              <p style={{ margin: 0, color: "#FEEEE7", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
                 Black lake, black boat, two black, cut-paper people.<br />
                 Where do the black trees go that drink here ? 
               </p>
-              <p style={{ margin: 0, color: "#FFB499", fontSize: "clamp(0.65rem, 0.5vw, 0.15rem)", textAlign: "center", lineHeight: 1.4 }}>
+              <p style={{ margin: 0, color: "#FEEEE7", fontSize: "clamp(0.65rem, 0.5vw, 0.15rem)", textAlign: "center", lineHeight: 1.4 }}>
                 Crossing Waters, Sylvia Plath, édition Faber and Faber Limited, 1971
+              </p>
+            </div>
+
+            {/* NOUVEAU DIV — s'étend du milieu vers les côtés */}
+            <div
+              className="expand-box"
+              style={{ alignSelf: "center", background: "#485F63", padding: "0.6rem 1.2rem", maxWidth: "55%", cursor: "pointer", transition: "background 0.3s ease" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "#E8006E")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#485F63")}
+              onClick={() => window.location.href = "/nos-points-de-vente"}
+            >
+              <p style={{ margin: 0, color: "#F1F3F3", fontSize: "clamp(0.85rem, 1.5vw, 1.15rem)", fontWeight: 700, textAlign: "center", lineHeight: 1.4 }}>
+                Achetez un exemplaire de la revue juste <a href="/nos-points-de-vente" style={{ color: "#F1F3F3", textDecoration: "underline" }}>ici</a>
               </p>
             </div>
           </div>
@@ -77,7 +97,7 @@ export default function HeroPage({ posts }: { posts: any[] }) {
               backgroundColor: "#485F63",
               padding: "clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 5vw, 4rem)",
               fontSize: "clamp(0.75rem, 1.5vw, 1.15rem)",
-              color: "#B6BFC1",
+              color: "#F1F3F3",
               textAlign: "center",
               lineHeight: 1.6,
               fontWeight: 700,

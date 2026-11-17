@@ -12,14 +12,14 @@ export default async function NosPointsDeVente() {
       <div style={{ position: "relative", height: "100vh", width: "100%", overflow: "hidden" }}>
         <img
           src="/images/nos_points_de_vente.png"
-          alt="Points de vente"
+          alt="Acheter la revue"
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5))" }} />
 
         <div style={{  position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "1rem" }}>
-          <h1 style={{ margin: 20, backgroundColor: "#485F63", color: "#b2babb", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, textAlign: "center", padding: "0.5rem 1rem" }}>
-            POINTS DE VENTE
+          <h1 style={{ margin: 20, backgroundColor: "#E8006E", color: "#FFE6F1", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, textAlign: "center", padding: "0.5rem 1rem" }}>
+            ACHETER LA REVUE
           </h1>
         </div>
 
@@ -36,17 +36,10 @@ export default async function NosPointsDeVente() {
       <main style={{ padding: "4rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
 
         <p style={{ marginTop: "1rem", fontSize: "1.6rem", color: "#485F63", textAlign: "center" }}>
-           Nous travaillons à rendre Thermes disponible au plus près de chez vous. <br />Vous pouvez d’ores et déjà vous procurer la revue dans les points de vente ci-dessous.
+           Nous travaillons à rendre Thermes disponible au plus près de chez vous. <br /><br />
+           Vous pouvez d’ores et déjà vous procurer la revue dans les points de vente ci-dessous, <br />
+           ou vous faire livrer partout en <b>France</b> ( 5€ de frais de livraison ) !
         </p>
-
-        {/* CARTE INTERACTIVE — Client Component */}
-        <StoreMap />
-        {/* texte explicatif que c'est que pour les parisiens  */}
-        <p style={{ marginTop: "1rem", fontSize: "1.2rem", color: "#485F63", textAlign: "center" }}>
-          Vous pouvez également commander la revue ci-dessous et vous la faire livrer partout en <b>France</b> ( 5€ de frais de livraison ) !
-        </p>
-
-
         
         <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center" }}>
           <a
@@ -57,8 +50,8 @@ export default async function NosPointsDeVente() {
               display: "inline-flex",
               alignItems: "center",
               gap: "0.6rem",
-              background: "#E8006E",
-              color: "#fff",
+              background: "#F26522",
+              color: "#FEEEE7",
               padding: "0.75rem 1.8rem",
               fontWeight: 500,
               textDecoration: "none",
@@ -67,6 +60,14 @@ export default async function NosPointsDeVente() {
             Se faire livrer
           </a>
         </div>
+        
+        {/* CARTE INTERACTIVE — Client Component */}
+        <StoreMap />
+        
+
+
+        
+        
       </main>
 
       <Footer />

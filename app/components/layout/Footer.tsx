@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const footerLinks = [
-  { label: "OÙ NOUS TROUVER ?", href: "/nos-points-de-vente" },
+  { label: "ACHETER LA REVUE", href: "/nos-points-de-vente" },
   { label: "MENTIONS LÉGALES", href: "/mentions-legales" },
   { label: "CONTACT", href: "/contact" },
 ];

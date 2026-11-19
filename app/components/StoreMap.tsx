@@ -10,7 +10,7 @@ const STORES = [
   { name: "Librairie Le Delta",              address: "1 rue Cassette",            city: "Paris",    zip: "75006", lat: 48.8474, lng: 2.3302 },
   { name: "Librairie L'esprit et la Plume",  address: "47 rue de Clichy",          city: "Paris",    zip: "75009", lat: 48.8806, lng: 2.3321 },
   { name: "Halle Saint Pierre",             address: "2 rue Ronsard",             city: "Paris",    zip: "75018", lat: 48.8844, lng: 2.3435 },
-  { name: "Terrasse de Gunteberg",          address: "9 rue Emilio Castelar",     city: "Paris",    zip: "75012", lat: 48.8456, lng: 2.3956 },
+  { name: "Terrasse de Gutenberg",          address: "9 rue Emilio Castelar",     city: "Paris",    zip: "75012", lat: 48.8456, lng: 2.3956 },
   { name: "La Manoeuvre",                   address: "53 rue de la Roquette",     city: "Paris",    zip: "75011", lat: 48.8550, lng: 2.3734 },
   { name: "Le Bal des Ardents",             address: "17 rue Neuve",              city: "Lyon",     zip: "69001", lat: 45.7676, lng: 4.8335 },
   { name: "Librairie Thuard",               address: "24 rue de l'Étoile",        city: "Le Mans",  zip: "72100", lat: 47.9955, lng: 0.1985 },
